@@ -38,7 +38,7 @@ import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
-my_cur.execute("SELECT FRUIT_NAME  FROM FRUIT_LOAD_LIST WHERE FRUIT_NAME LIKE 'b%'")
+my_cur.execute("SELECT FRUIT_NAME  FROM PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST WHERE FRUIT_NAME LIKE 'b%'")
 my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
